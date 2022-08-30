@@ -3,7 +3,7 @@
   "tests": [
     {
       "default": {
-        "json_url": "/json",
+        "json_url": "None",
         "plaintext_url": "/plaintext",
         "port": 8088,
         "approach": "Realistic",

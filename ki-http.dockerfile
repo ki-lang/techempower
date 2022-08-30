@@ -1,11 +1,12 @@
+FROM ubuntu:22.04
 
 WORKDIR /app
 
-COPY ./main.ki run.sh ./
+COPY ./main.ki /app
 
 RUN git clone https://github.com/ki-lang/ki && make && ./install.sh 
-RUN git clone https://github.com/ki-lang/techempower && ki build ./main.ki -o ./server --optimize
+RUN ki build main.ki -o ./server --optimize
 
-EXPOSE 8088
+EXPOSE 8080
 
-CMD sh ./server
+CMD ./server

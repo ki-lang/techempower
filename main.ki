@@ -3,14 +3,20 @@ use ki:http;
 
 func handler(http:Request req) http:Response{
 
-	return http:Response{
-		body: "Hello from example"
-	};
+	if(req.uri == "/plaintext") {
+		return http:Response{
+			body: "Hello from example"
+		};
+	} else if(req.uri == "/json") {
+		return http:Response{
+			body: "JSON TODO"
+		};
+	}
 }
 
 func main() i32 {
 
-	@ s = http:Server.init("127.0.0.1", 8088, handler) or panic "Failed to start server";
+	@ s = http:Server.init("127.0.0.1", 8080, handler) or panic "Failed to start server";
 	s.start() or return {
 		println("Failed to start http server");
 		return 1;
