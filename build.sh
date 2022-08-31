@@ -1,0 +1,1 @@
+sudo docker build -f ki-http.dockerfile -t kihttp .
