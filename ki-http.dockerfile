@@ -7,10 +7,7 @@ RUN apt-get update
 RUN apt-get install sudo -y
 RUN apt-get install git -y
 RUN apt-get install build-essential -y
-RUN apt-get install libcurl4-gnutls-dev -y
-RUN apt-get install llvm clang -y
-RUN apt-get install libz-dev openssl -y
-RUN git clone https://github.com/ki-lang/ki && cd ki && git checkout rewrite && make && bash ./install.sh
+wget -O - https://ki-lang.dev/dist/install.sh | bash -s techempower
 
 # Copy app code
 COPY ./main.ki /app
