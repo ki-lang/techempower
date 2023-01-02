@@ -19,3 +19,7 @@ sudo docker ps
 sudo docker stop {ID}
 sudo docker rm {ID}
 ```
+
+## Test local
+
+ki build main.ki -o ./server
