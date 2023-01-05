@@ -10,6 +10,9 @@ RUN apt-get install build-essential -y
 RUN apt-get install curl -y
 RUN apt-get install libxml2-dev -y
 RUN apt-get install libc6 -y
+RUN apt-get install zlib1g-dev -y
+
+RUN echo "Download"
 
 RUN curl -s https://ki-lang.dev/dist/install.sh | bash -s techempower
 
