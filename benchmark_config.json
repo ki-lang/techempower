@@ -5,7 +5,7 @@
       "default": {
         "json_url": "None",
         "plaintext_url": "/plaintext",
-        "port": 8088,
+        "port": 8080,
         "approach": "Realistic",
         "classification": "Micro",
         "database": "None",
