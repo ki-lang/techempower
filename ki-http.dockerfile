@@ -2,18 +2,17 @@ FROM ubuntu:22.04
 
 WORKDIR /app
 
-# Build ki lang from source
 RUN apt-get update
+# used by the ki installation script
 RUN apt-get install sudo -y
-RUN apt-get install git -y
+# ld dependencies
 RUN apt-get install build-essential -y
+# used for downloading the install script and ki binaries
 RUN apt-get install curl -y
-RUN apt-get install libxml2-dev -y
-RUN apt-get install libc6 -y
+# dependency from openssl (probably)
 RUN apt-get install zlib1g-dev -y
 
-RUN echo "Download"
-
+# Download & install ki compiler
 RUN curl -s https://ki-lang.dev/dist/install.sh | bash -s techempower
 
 # Copy app code
